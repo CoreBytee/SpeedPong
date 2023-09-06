@@ -40,6 +40,11 @@ class Ball {
         if (this.CheckHorisontalCollisions()) {
             this.MotionY *= -1
         }
+
+        if (keyIsDown(32)) {
+            this.Speed += 0.1
+        }
+
     }
 
     SidePositions() {
@@ -61,9 +66,9 @@ class Ball {
     }
 
     CheckSideCollisions() {
-        if (this.PositionX < 0) {
+        if (this.PositionX < -50) {
             return -1
-        } else if (this.PositionX > this.Main.WindowSizeX) {
+        } else if (this.PositionX > this.Main.WindowSizeX + 50) {
             return 1
         }
 
